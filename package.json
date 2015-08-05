@@ -1,5 +1,5 @@
 {
-  "name": "generator-static-website",
+  "name": "generator-static-website-docker",
   "version": "0.1.0",
   "description": "Yeoman generator for static website construction. It provides also docker support for build and run in local webserver.",
   "keywords": [
