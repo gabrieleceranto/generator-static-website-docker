@@ -2,6 +2,13 @@
 Yeoman generator to build static website using docker (optional) to drive build and test in local webserver.
 
 ## Installation
+Execute command
+```bash
+npm install -g yo grunt-cli generator-static-website
+```
+with sudo if you get permission error
+
+## Usage
 Just type
 ```bash
 yo static-website
