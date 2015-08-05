@@ -2,9 +2,18 @@ var generators = require('yeoman-generator');
 var chalk = require('chalk');
 
 module.exports = generators.Base.extend({
+	constructor: function() {
+		generators.Base.apply(this, arguments);
+
+		this.option('docker', {
+			desc: 'Use docker to initialize dependencies.'
+		});
+	},
+
 	prompting: function() {
 		var done = this.async();
-		this.prompt([
+		
+		var queries = [
 			{
 				type: 'input',
 				name: 'name',
@@ -35,13 +44,19 @@ module.exports = generators.Base.extend({
 				name: 'css',
 				message: 'CSS engine',
 				choices: ['sass', 'less']
-			}, {
+			}
+		];
+		
+		if(this.options.docker === undefined) {
+			queries.push({
 				type: 'confirm',
 				name: 'docker',
 				message: 'Do you want to build using docker in place of native tools?',
 				default: true
-			}
-		], function (props) {
+			});
+		}
+		
+		this.prompt(queries, function (props) {
 			var author = [];
 			if(props.author) {
 				author.push(props.author);
@@ -51,6 +66,9 @@ module.exports = generators.Base.extend({
 			}
 			props.author_email = author.join(' ');
 			this._props = props;
+			if(this.options.docker !== undefined) {
+				this._props.docker = this.options.docker;
+			}
 			done();
 		}.bind(this));
 	},
