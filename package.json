@@ -1,0 +1,31 @@
+{
+  "name": "generator-static-website",
+  "version": "0.1.0",
+  "description": "Template to build static websites with sass build and uglification. You can also build static html through Handlebars static compilation. Provided with docker script to locally build and test without tool installation needing.",
+  "keywords": [
+    "yeoman-generator",
+    "Grunt",
+    "Docker",
+    "SASS",
+    "LESS",
+    "Handlebars"
+  ],
+  "main": "app/index.js",
+  "author": {
+    "name": "Gabriele Ceranto",
+    "email": "",
+    "url": "https://github.com/gceranto"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "yeoman-generator": "^0.20.2",
+    "chalk": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gceranto/generator-static-website.git"
+  },
+  "files": [
+    "app"
+  ]
+}

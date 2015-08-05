@@ -1,0 +1,13 @@
+#!/bin/sh
+
+<% if(css_engine === 'less') { %>
+DOCKER_IMAGE=gceranto/nodejs-bower-grunt-yeoman
+<% } else { %>
+DOCKER_IMAGE=gceranto/nodejs-bower-grunt-yeoman-sass
+<% } %>
+DOCKER_NAME=<%- name %>.build
+
+MOUNT_DIRS="-v `pwd`:/data"
+
+docker rm -f $DOCKER_NAME
+docker run --name=$DOCKER_NAME -it $MOUNT_DIRS $DOCKER_IMAGE sh -c "$*"

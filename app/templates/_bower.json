@@ -1,0 +1,14 @@
+{
+	"name": "<%- name %>",
+	"version": "<%- version %>",
+	"authors": [
+		"<%- author %>"
+	],
+	"license": "<%- license %>",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"test",
+		"tests"
+	]
+}
