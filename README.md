@@ -4,14 +4,14 @@ Yeoman generator to build static website using docker (optional) to drive build 
 ## Installation
 Execute command
 ```bash
-npm install -g yo grunt-cli generator-static-website
+npm install -g yo grunt-cli generator-static-website-docker
 ```
 with sudo if you get permission error
 
 ## Usage
 Just type
 ```bash
-yo static-website
+yo static-website-docker
 ```
 
 If you want to be fully helped by docker, you can use this to prevent to install anything (Yeoman included) and have same result:
